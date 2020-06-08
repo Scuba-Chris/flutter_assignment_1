@@ -18,8 +18,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
-
+  
   var _textIndex = 0;
 
   void _resetApp(){
@@ -29,14 +28,14 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _textchange(){
-    if (_textIndex < _statements.length){
+    if (_textIndex < statements.length){
       setState(() {
         _textIndex = _textIndex + 1;
       });
       print(_textIndex);
     }
   }
-  var _statements = [
+  var statements = [
     'I love to learn about coding!!', 
     'I love my new computer!!', 
     'World of Warcraft is the greatest game ever made!!',
@@ -50,7 +49,11 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Assignment 1'),
         ),
-      body: ShowText(text: _statements, textIndex: _textIndex, textHandler: _resetApp)
+      body: Column(
+        children: [
+         TextDisplayed(statements[_textIndex]),
+         ChangeText(_textchange),
+        ],) 
       ),
     );
   }

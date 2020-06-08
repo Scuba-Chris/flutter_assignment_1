@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import './text.dart';
 
-class ShowText extends StatelessWidget {
-  final List<Map<String, Object>> text;
-  final int textIndex;
+class ChangeText extends StatelessWidget {
   final Function textHandler;
 
-  ShowText(this.text, this.textIndex, this.textHandler);
+  ChangeText(this.textHandler);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        TextDisplayed(
-          statements[textIndex]
-        )
-      ],
+    return Container(
+      width: double.infinity,
+      child: RaisedButton(
+        child: Text('change text'),
+        onPressed: textHandler,
+        color: Colors.blue,
+        textColor: Colors.white,
+      ),
     );
   }
 }

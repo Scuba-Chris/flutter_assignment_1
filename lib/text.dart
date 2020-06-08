@@ -6,14 +6,14 @@ class TextDisplayed extends StatelessWidget {
   TextDisplayed(this.displayedText);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      margin: EdgeInsets.all(10),
-      child: Text(
-        displayedText,
-        style: TextStyle(fontSize: 28),
-        textAlign: TextAlign.center,
-    ));
+        width: double.infinity,
+        margin: EdgeInsets.all(10),
+        child: Text(
+          displayedText,
+          style: TextStyle(fontSize: 28),
+          textAlign: TextAlign.center,
+        ));
   }
 }
